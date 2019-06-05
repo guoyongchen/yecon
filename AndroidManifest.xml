@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.carocean"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0.3" >
+
+    <uses-sdk android:minSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- boot completed -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- gps -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- bt -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <!-- wifi -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <application
+        android:name=".ApplicationManage"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/launcher_appname"
+        android:persistent="true"
+        android:screenOrientation="landscape"
+        android:theme="@style/Application_style" 
+        android:largeHeap="true">
+        <activity
+            android:name="com.carocean.MainActivity"
+            android:launchMode="singleInstance"
+            android:stateNotNeeded="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY" /> -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.carocean.vmedia.MediaActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/wallpaper_defined"
+            android:windowSoftInputMode="adjustNothing" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.carocean.backcar.BackCarActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.carocean.can.CANActivity"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.carocean.vmedia.MediaActivity"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.carocean.media.picture.ImagePlayActivity"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.carocean.media.video.VideoActivity"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".operateintro.OperateIntroActivity"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".radio.RadioActivity"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screenlink.ScreenLinkActivity"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.carocean.vsettings.MainActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/wallpaper_defined"
+            android:windowSoftInputMode="adjustNothing" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".aircleaner.AirCleanerActivity"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".settings.screensaver.ScreenSaverActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:taskAffinity=".settings.screensaver.ScreenSaverActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".settings.screensaver.ScreenSaverService"
+            android:exported="false"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="com.carocean.ScreenSaverService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".floatwindow.FloatWindowService"
+            android:exported="false"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="com.carocean.FloatWindowService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.carocean.service.BootService"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="com.carocean.BootService" />
+            </intent-filter>
+        </service>
+        <service android:name="com.carocean.bt.service.BTService" >
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.hf.BluetoothHfService"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.bluetooth.IBluetoothHf" />
+                <action android:name="com.autochips.bluetooth.hf.IBluetoothHfServerNotify" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.pbapclient.BluetoothPbapClientService"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.bluetooth.IBluetoothPbapClient" />
+                <action android:name="android.bluetooth.IBluetoothPbapCall" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.spp.SppService"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.hid.BluetoothHidService"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.bluetooth.IBluetoothHid" />
+                <action android:name="com.autochips.bluetooth.hid.IBluetoothHidDeviceUtility" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.PbSyncManager.PBSyncManagerService"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.autochips.bluetooth.PbSyncManager.IPBSyncManager" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.a2dpsink.BluetoothA2dpSinkService"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.bluetooth.IBluetoothA2dpSink" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.avrcpct.BluetoothAvrcpCtService"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.bluetooth.IBluetoothAvrcpCt" />
+                <action android:name="com.autochips.bluetooth.avrcpct.IBluetoothAvrcpCtPlayerManage" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.dundt.BluetoothDunDtService"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.bluetooth.IBluetoothDunDt" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.autochips.bluetooth.dundt.SmsSyncManagerService"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.autochips.bluetooth.dundt.ISMSSyncManager" />
+            </intent-filter>
+        </service>
+        <service android:name="com.yecon.mediaservice.MediaPlayerServiceProxy" >
+            <intent-filter>
+                <action android:name="com.yecon.musicservice.MediaPlayerServiceProxy" />
+            </intent-filter>
+        </service>
+        <service android:name="com.yecon.mediaservice.VideoPlayerServiceProxy" >
+            <intent-filter>
+                <action android:name="com.yecon.musicservice.VideoPlayerServiceProxy" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="com.carocean.radio.db.RadioProvider"
+            android:authorities="com.carocean.radio"
+            android:exported="false" >
+        </provider>
+
+        <receiver android:name=".receiver.BootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.yecon.action.YECON_BOOT_COMPLETED" />
+                <action android:name="com.yecon.action.ACC_OFF" />
+                <action android:name="com.yecon.action.ACC_ON" />
+                <action android:name="autochips.intent.action.QB_POWERON" />
+                <action android:name="autochips.intent.action.QB_POWEROFF" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_EJECT" />
+
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        
+        <service
+            android:name="com.carocean.media.scan.MediaScanService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="yecon.intent.action.YECON_MEDIA_SCANNER_SERVICE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.carocean.media.service.MediaPlayerServiceProxy"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.carocean.media.service.MediaPlayerServiceProxy" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.carocean.t19can.CanBusService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+
+        <provider
+            android:name="com.carocean.media.scan.MediaProvider"
+            android:authorities="com.carocean.media.scan.MediaProvider"
+            android:exported="true" >
+        </provider>
+
+        <receiver android:name="com.carocean.media.service.MyMediaButtonReciver" >
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" >
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.carocean.radio.RadioMediaButtonReciver" >
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" >
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.carocean.bt.BtMediaButtonReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" >
+                </action>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
